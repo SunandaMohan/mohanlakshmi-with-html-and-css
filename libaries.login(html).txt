@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body bgcolor="Anusree">
+
+<h3>Registration</h3>
+
+<div class="container">
+  <form action="/">
+    <label for="fname">First Name</label><br><br>
+    <input type="text" id="fname" name="firstname" placeholder="Your name"><br><br>
+
+    <label for="lname">Last Name</label><br><br>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name"><br><br>
+
+    <label for="phone">Enter a phone number</label><br><br>
+    <input type="tel"  id="phone" name="phone" placeholder="Your moblie number"><br><br>
+
+<label for="Address">Address</label><br><br>
+<textarea id='address' rows='5' cols='20' placeholder="Address"></textarea><br><br>
+
+
+    <label for="state">State</label><br><br>
+    <select id="State" name="state">
+      <option value="Andhra Pradesh">Andhra Pradesh</option>
+      <option value="Telangana">Telangana</option>
+      <option value="Tamil Nadu">Tamil Nadu</option>
+      <option value="Kerala">Kerala</option>
+      <option value="Karnataka">Karnataka</option>
+      <option value="Haryana">Haryana</option>
+    </select><br><br>
+
+     <label for="city">City</label><br><br>
+     <select id="city" name="city">
+      <option value="vijayawada">Vijayawada</option>
+      <option value="Visakhapatnam">Visakhapatnam</option>
+      <option value="Guntur">Guntur</option>
+      <option value="Kerala">Kerala</option>
+      <option value="Nellore">Nellore</option>
+      <option value="Chittoor">Chittoor</option>
+      <option value="Hyderabad">Hyderabad</option>
+      <option value="Warangal">Warangal</option>
+      <option value="Nizamabad">Nizamabad</option>
+      <option value="Khammam">Khammam</option>
+      <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+      <option value="Kozhikode">Kozhikode</option>
+      <option value="Kochi">Kochi</option>
+      <option value="Kollam">Kollam</option>
+      <option value="Hubli-Dharwad">Hubli-Dharwad</option>
+      <option value="	Gulbarga">Gulbarga</option>
+      <option value="Mysore">Mysore</option>
+      <option value="	Mangalore">Mangalore</option>
+      <option value="Chennai">Chennai</option>
+      <option value="Madurai">Madurai</option>
+      <option value="Hubli-Dharwad">Hubli-Dharwad</option>
+      <option value="	Tiruchirappalli">Tiruchirappalli</option>
+      <option value="Coimbatore">Coimbatore</option>
+      <option value="	Faridabad">Faridabad</option>
+      <option value="Gurugram">Gurugram</option>
+      <option value="	Panipat">	Panipat</option>
+      <option value="Ambala">Ambala</option>
+    </select><br>
+
+     <label for="Gender">Gender</label><br><br>
+     <select id="Gender" name="Gender">
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="others">Others</option>
+      </select><br>
+
+
+    <label for="BOD">Birth Of Date</label><br><br>
+    <input type="date" id="BOD" name="BOD" placeholder="Your BOD"><br><br>
+
+    <label for="email">Email</label><br><br>
+    <input type="text" id="email" name="email" placeholder="Email"><br><br>
+
+    <label>Books</label><br><br>
+    <input type='checkbox' value='science' name='books'> Science
+    <input type='checkbox' value='social' name='books'> Social
+    <input type='checkbox' value='english' name='books'> English
+    <input type='checkbox' value='mathematics' name='books'> Mathematics
+    <input type='checkbox' value='history' name='books'> History
+    <input type='checkbox' value='biology' name='books'> Biology
+    <input type='checkbox' value='chemistry' name='books'> Chemistry
+
+     <ul>
+<li><a href="thankyou"><input type="submit" ></a></li></ul>
+
+  </form>
+</div>
+
+</body>
+</html>

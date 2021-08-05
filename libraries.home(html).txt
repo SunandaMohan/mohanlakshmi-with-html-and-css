@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>LIBRARIES</title>
+<style>
+body{
+background-color:yellow;
+</style>
+
+<body bgcolor='#FFEBCD' width='100%'>
+<center>
+<div id="menu"><ul>
+<li><a href="login">Login</a></li></ul>
+</div>
+<p>Login Here</p>
+<p> For Registration </p>
+<p> For Books</p>
+</center>
+</body>
+</head>
+</html>
