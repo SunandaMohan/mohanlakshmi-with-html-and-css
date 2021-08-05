@@ -1,0 +1,153 @@
+main.py:
+========
+from flask import Flask
+from flask_mail import Mail,Message
+app=Flask(__name__)
+mail=Mail(app)
+app.config['MAIL_SERVER']='smtp.gmail.com'
+app.config['MAIL_PORT']='465'
+app.config['MAIL_USERNAME']='ravi.pinaprolu@gmail.com'
+app.config['MAIL_PASSWORD']='9290923232'
+app.config['MAIL_USE_TLS']=False
+app.config['MAIL_USE_SSL']=True
+mail=Mail(app)
+@app.route("/")
+def index():
+    msg=Message('Hi', sender='ravi.pinaprolu@gmail.com',
+                recipients=['gangarapudeekshitha@gmail.com@gmail.com'])
+    msg.body="I'm sending this email to you by using Flask mail."
+    mail.send(msg)
+    return 'Sent'
+if __name__=='__main__':
+    app.run(debug=True)
+-----------------------------------------------------
+bujii.py:
+=======
+from flask import Flask, request,render_template
+app=Flask(__name__)
+@app.route('/')
+def hello():
+    return render_template("login.html")
+database={'sunu':'Sunu@123','pavani':'kalyani@123','nandhu':'nandu@123'}
+@app.route('/form_login',methods=['POST','GET'])
+def login():
+    name1=request.form['Username']
+    pwd=request.form['Password']
+    if name1 not in database:
+        return render_template('login.html',info='Invalid User')
+    else:
+        if database[name1]!=pwd:
+            return render_template('login.html',info='Invalid Password')
+        else:
+            return render_template('home.html')
+if __name__=='__main__':
+    app.run(debug=True)
+-----------------------------------------------------
+login.html:
+==========
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+</head>
+<body style="background-color :orange;">
+<form action="/form_login" method="post">
+<h1 align="center">Login here</h1>
+    Username :
+    <input type="text" name="Username" placeholder="Enter the username"><br>
+    <br>
+    Password:
+    <input type="password" name="Password" placeholder="Enter the password"><br>
+    <br>
+    <input type="submit" value="Login"><br>
+</form>
+</body>
+</html>
+-----------------------------------------------------
+home.html:
+==========
+<html>
+<head>
+<style>
+{
+box-sizing: border-box;
+  width: 300px;
+  height: 100px;
+  padding: 30px;
+  border: 10px  orange;
+}
+</style>
+<title>resume</title>
+</head>
+<center><h1 style="color:red;">RESUME</h1></center>
+<body style="background-color:lightblue;">
+<right-center>
+<img src="C:\Users\lakshmi.pinaprolu\Documents\New folder\likki143.png",width="100" height="90"><br><br>
+</right-center>
+
+<b style="color:blue;">FIRST NAME</b><br><br>
+<input type="text" name="fname" style="color:red;" value="Lakshmi"><br>
+
+<b style="color:blue;">LAST NAME</b><br><br>
+<input type="text" name="lname" style="color:red;" value="Pinaprolu"><br>
+<b style="color:blue;">EMAIL</b><br><br>
+<input type="email" name="Email" style="color:red;" value="lakshmi.ravi@gmail.com"><br><br>
+
+ <b style="color:blue;">DATE OF BIRTH</b><br><br>
+<input type="date" name="dob" style="color:red;" value=12-07-2003 ><br><br>
+
+
+<b style="color:blue;">PHONE</b><br><br>
+<input type="tel"  id="phone" name="phone" style="color:red;" value="987654321" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"<br><br><br>
+
+<b style="color:blue;">MARITAL STATUS</b><br><br>
+<select id="Marital status" name="Marital status" style="color:red;">
+<option value="Unmarried" style="color:red;">Unmarried</option>
+<option value="Married">Married</option>
+<option value="Others" style="color:red;">others</option>
+</select><br><br>
+
+<b style="color:blue;">ADDRESS</b><br><br>
+<input type="text" name="Address" style="color:red;"  value="3-129/1, Atkur, krishna dist, 521286, A.P "><br><br>
+
+<b style="color:blue;">GENDER</b><br><br>
+<select id="Gender" name="Gender" style="color:red;">
+<option value="Female" style="color:red;" >Female</option>
+<option value="Male"style="color:red;">Male</option>
+<option value="Others" style="color:red;">others</option>
+</select><br><br>
+
+<b style="color:blue;"><u>EDUCATION</u></b><br>
+<ul>
+<li style="color:green;">Qualification | percentage | passing year  </li>
+<li style="color:red;">SSC | 85%   |2018 </li>
+<li style="color:red;">Intermediate  |85%  | 2020</li>
+</ul>
+
+<b style="color:blue;">  STRENGTH</b><br><br>
+<input type="text" name="strength" style="color:red;" value="Extrovert"><br>
+
+<b style="color:blue;">WEAKNESS</b><br><br>
+<input type="text" name="weakness" style="color:red;" value="short tempered" ><br>
+
+
+<dt><h3 style="color:blue;"><u>HOBBIES</u></h3></dt>
+<dd style="color:red;">Reading books,<br>
+            listening music,<br>
+            Watching television.</dd>
+<dt><h3 style="color:blue;"><u>skills</u></h3></dt>
+<dd style="color:red;">Html,<br>
+            css,<br>
+            django Flask</dd>
+
+<dt><h3 style="color:blue;"><u>LANGUAGE KNOWN</u></h3></dt>
+  <dd style="color:red;">Telugu,<br>
+           English.
+            </dd>
+
+<h3 style="color:blue;"><u>DECLARATION</u></h3>
+<p style="color:red;">I hereby declare that the details furnished above are true and correct to the best of my knowledge and belief.</p>
+
+</body>
+</html>
